@@ -107,7 +107,20 @@ const DATA = [
     note: '绿豆浸泡不要超过10分钟',
     source: '《改命记实录》'
   },
-  // ========== 外用/物理类 ==========
+  
+  {
+    cat: '内服',
+    name: '麻黄汤（方剂测试）',
+    zhuzhi: '见详情',
+    material: '见详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong>维基百科<strong>麻黄汤</strong>（CC-BY-SA 协议）',
+    note: '⚠️ 测试条目',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E9%BA%BB%E9%BB%84%E6%B1%A4',
+  },
+// ========== 外用/物理类 ==========
   {
     cat: '外用', name: '红线绑中指治麦粒肿', zhuzhi: '麦粒肿',
     material: '红色缝衣线', chapter: '第58章',
