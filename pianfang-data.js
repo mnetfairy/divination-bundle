@@ -120,6 +120,141 @@ const DATA = [
     source: '维基百科·CC-BY-SA',
     source_url: 'https://zh.wikipedia.org/wiki/%E9%BA%BB%E9%BB%84%E6%B1%A4',
   },
+
+  {
+    cat: '内服',
+    name: '方剂（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E6%96%B9%E5%89%82" target="_blank">维基百科《方剂》</a>（CC-BY-SA 协议）<br>在组方过程中，方剂以“君臣佐使”作为组方原则，并根据实际情况在成方基础上进行药味、药量的加减及剂型变化，将药物配伍成方剂。
+...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E6%96%B9%E5%89%82',
+  },
+
+  {
+    cat: '内服',
+    name: '方剂学（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E6%96%B9%E5%89%82%E5%AD%A6" target="_blank">维基百科《方剂学》</a>（CC-BY-SA 协议）<br>方剂学于20世纪50年代方剂理论体系才得以初步形成，方剂学才逐渐地从中医药学中分化出来而成为一门独立的学科，具有基础和临床的双重属性，联系...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E6%96%B9%E5%89%82%E5%AD%A6',
+  },
+
+  {
+    cat: '内服',
+    name: '中药（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF" target="_blank">维基百科《中药》</a>（CC-BY-SA 协议）<br>“中药学”是研究中药基本理论和各种中药的来源、采制、性能、功效、临床应用等知识的一门学科。传统上，中药学一般称为本草学或生药学，及至近代，随着西方医药学的传播，本草学逐渐改称为“中药学”。
+...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF',
+  },
+
+  {
+    cat: '内服',
+    name: '中藥配方顆粒（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%97%A5%E9%85%8D%E6%96%B9%E9%A1%86%E7%B2%92" target="_blank">维基百科《中藥配方顆粒》</a>（CC-BY-SA 协议）<br>在中国大陆地区，自经济改革开放之后，有部分药厂开始仿制“供配伍用中药颗粒”，官方并将相关产品定名为“中药配方颗粒”，都是单味药材制成。自2001年7月，国家药监局颁发了《中药配方颗粒管理暂行规定》，明确将中药配方颗粒纳入中药饮片管理的范畴，...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%97%A5%E9%85%8D%E6%96%B9%E9%A1%86%E7%B2%92',
+  },
+
+  {
+    cat: '内服',
+    name: '中药分类方法（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95" target="_blank">维基百科《中药分类方法》</a>（CC-BY-SA 协议）<br>现代记载中草药的教科书所采用的分类方法，根据其目的与重点而有不同，主要有下列四种：
+...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF%E5%88%86%E7%B1%BB%E6%96%B9%E6%B3%95',
+  },
+
+  {
+    cat: '内服',
+    name: '三因方（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E4%B8%89%E5%9B%A0%E6%96%B9" target="_blank">维基百科《三因方》</a>（CC-BY-SA 协议）<br>（维基百科条目已抓取）...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E4%B8%89%E5%9B%A0%E6%96%B9',
+  },
+
+  {
+    cat: '内服',
+    name: '中药学（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF%E5%AD%A6" target="_blank">维基百科《中药学》</a>（CC-BY-SA 协议）<br>为中国基于弘扬本国医学传统理论的立场以中国传统医学理论（汉民族医学理论）为主而将中国历代...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E4%B8%AD%E8%8D%AF%E5%AD%A6',
+  },
+
+  {
+    cat: '内服',
+    name: '六味地黄丸（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E5%85%AD%E5%91%B3%E5%9C%B0%E9%BB%84%E4%B8%B8" target="_blank">维基百科《六味地黄丸》</a>（CC-BY-SA 协议）<br>（维基百科条目已抓取）...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E5%85%AD%E5%91%B3%E5%9C%B0%E9%BB%84%E4%B8%B8',
+  },
+
+  {
+    cat: '内服',
+    name: '芍药（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E8%8A%8D%E8%8D%AF" target="_blank">维基百科《芍药》</a>（CC-BY-SA 协议）<br>时雨初肥芍药苗，腕把香茆酒肠消，扬州帘卷春风里，曾惜名花第一娇。
+...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E8%8A%8D%E8%8D%AF',
+  },
+
+  {
+    cat: '内服',
+    name: '补中益气汤（方剂）',
+    zhuzhi: '见维基百科详情',
+    material: '见维基百科详情',
+    chapter: '—',
+    steps: ['请查阅维基百科原文'],
+    detail: '<strong>来源：</strong><a href="https://zh.wikipedia.org/wiki/%E8%A1%A5%E4%B8%AD%E7%9B%8A%E6%B0%94%E6%B1%A4" target="_blank">维基百科《补中益气汤》</a>（CC-BY-SA 协议）<br>现代技术将药剂浓缩成口服液。也有再进一步烘干成颗粒冲剂，也有再制成水丸或大蜜丸的版本。
+...',
+    note: '⚠️ 偏方/方剂仅供参考，不能替代专业医师诊疗。需经主人审核才能并入生产。',
+    source: '维基百科·CC-BY-SA',
+    source_url: 'https://zh.wikipedia.org/wiki/%E8%A1%A5%E4%B8%AD%E7%9B%8A%E6%B0%94%E6%B1%A4',
+  },
 // ========== 外用/物理类 ==========
   {
     cat: '外用', name: '红线绑中指治麦粒肿', zhuzhi: '麦粒肿',
