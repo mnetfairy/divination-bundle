@@ -1,0 +1,46 @@
+# 运行时产生的日志（不上传）
+*.log
+server.log
+tunnel.log
+tunnel_new.log
+
+# Cloudflare 凭据（绝对不能上传）
+*.json
+!package*.json
+!tsconfig*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# 系统
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.iml
+
+# 临时文件
+*.tmp
+*.bak
+*.hermes-tmp.*
+
+# 凭据和敏感配置
+.env
+.env.local
+*.pem
+cert.pem
+
+# Hermes 内部事项目录（不要上 GitHub）
+SUMMARY.md

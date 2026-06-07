@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>民间偏方 · 占卜系统 · 首页</title>
+<style>
+:root {
+  --primary: #8b2323;
+  --primary-dark: #6a1818;
+  --gold: #d9a05b;
+  --bg: #f5f0e6;
+  --bg-card: rgba(255,255,255,0.88);
+  --text: #333;
+  --text-light: #666;
+  --border: rgba(217,160,91,0.3);
+  --shadow: 0 4px 16px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --font-size-base: 16px;
+}
+[data-size="small"]  { --font-size-base: 14px; }
+[data-size="medium"] { --font-size-base: 16px; }
+[data-size="large"]  { --font-size-base: 18px; }
+[data-size="xlarge"] { --font-size-base: 20px; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: var(--font-size-base); -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", sans-serif;
+  background: var(--bg);
+  background-image: radial-gradient(#e5dbce 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+}
+
+/* ===== 顶部导航 ===== */
+.topbar {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.topbar h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+.font-btns { display: flex; gap: 4px; }
+.font-btns button {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffd97a;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.2s;
+  min-width: 34px;
+  position: relative;
+}
+.font-btns button:hover, .font-btns button.active { background: rgba(255,255,255,0.3); color: #fff; }
+.font-btns button::after { content: attr(data-label); display: block; font-size: 0.6rem; margin-top: -1px; opacity: 0.8; }
+
+/* ===== 入口卡片 ===== */
+.programs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px 14px 0;
+}
+.prog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.prog-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+  transform: translateY(-2px);
+}
+.prog-card .icon { font-size: 2.2rem; }
+.prog-card .title { font-weight: bold; font-size: 0.95rem; color: var(--primary); }
+.prog-card .sub { font-size: 0.72rem; color: var(--text-light); }
+.prog-card .arrow {
+  font-size: 0.7rem;
+  background: var(--primary);
+  color: #ffd97a;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ===== 偏方索引区 ===== */
+.index-section { padding: 16px 14px 40px; }
+
+/* 索引切换标签 */
+.idx-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+}
+.idx-tab {
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: 0.2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+.idx-tab:hover { color: var(--primary); }
+.idx-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: bold;
+}
+.idx-content { display: none; }
+.idx-content.active { display: block; }
+
+.index-section h2 {
+  font-size: 1rem;
+  color: var(--primary);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.index-section h2 .count {
+  font-size: 0.65rem;
+  background: var(--primary);
+  color: #ffd97a;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+.cat-block { margin-bottom: 14px; }
+.cat-title {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+  padding: 4px 8px;
+  background: rgba(139,35,35,0.08);
+  border-left: 3px solid var(--gold);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cat-title .cat-count {
+  font-size: 0.65rem;
+  background: var(--gold);
+  color: var(--primary-dark);
+  padding: 0 6px;
+  border-radius: 8px;
+}
+.items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.item-link {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.82rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.item-link:hover {
+  background: var(--primary);
+  color: #ffd97a;
+  border-color: var(--primary);
+}
+.item-link .item-zhuzhi { font-size: 0.65rem; color: var(--text-light); margin-top: 1px; }
+.item-link:hover .item-zhuzhi { color: rgba(255,217,122,0.8); }
+.item-link .r { font-size: 0.7rem; opacity: 0.5; }
+
+/* ===== 底部 ===== */
+footer { text-align: center; padding: 20px 16px; color: var(--text-light); font-size: 0.72rem; }
+
+/* ===== 响应式 ===== */
+@media (min-width: 480px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+  .programs { padding: 20px 20px 0; gap: 16px; }
+  .prog-card { flex-direction: row; text-align: left; gap: 12px; }
+  .prog-card .icon { font-size: 2.5rem; }
+  .index-section { padding: 20px 20px 40px; }
+  .items-grid { grid-template-columns: repeat(4, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <span style="width:24px;"></span>
+  <h1>民间偏方 · 占卜系统</h1>
+  <div class="font-btns">
+    <button onclick="setFontSize('small')" data-size-btn="small" data-label="小"></button>
+    <button onclick="setFontSize('medium')" data-size-btn="medium" data-label="中"></button>
+    <button onclick="setFontSize('large')" data-size-btn="large" data-label="大"></button>
+    <button onclick="setFontSize('xlarge')" data-size-btn="xlarge" data-label="特大"></button>
+  </div>
+</nav>
+
+<section class="programs">
+  <a class="prog-card" href="pianfang.html">
+    <span class="icon">🌿</span>
+    <div>
+      <div class="title">民间偏方大全</div>
+      <div class="sub">改命纪实录 · 34个偏方</div>
+    </div>
+    <span class="arrow">进入 ›</span>
+  </a>
+  <a class="prog-card" href="new.html">
+    <span class="icon">🖐️</span>
+    <div>
+      <div class="title">婚姻占卜术</div>
+      <div class="sub">掌中诀 · 年月日支推算</div>
+    </div>
+    <span class="arrow">进入 ›</span>
+  </a>
+</section>
+
+<section class="index-section">
+  <h2>偏方浏览 <span class="count" id="totalCount">共 34 个</span></h2>
+
+  <!-- 搜索框 -->
+  <div class="search-wrap">
+    <input id="searchInput" type="text" placeholder="🔍 搜索偏方名 / 主治 / 材料..." oninput="doSearch()" autocomplete="off">
+  </div>
+
+  <!-- 索引模式切换：分类 / 病种 -->
+  <div class="idx-tabs">
+    <button class="idx-tab active" data-mode="cat" onclick="switchIdx('cat')">▌按分类</button>
+    <button class="idx-tab" data-mode="disease" onclick="switchIdx('disease')">▌按病种</button>
+  </div>
+
+  <!-- 动态结果区 -->
+  <div class="result-list" id="resultList"></div>
+</section>
+
+<footer>本程序基于《改命纪实录》《天眼风水师》编写 · 仅供文化研究与娱乐参考</footer>
+
+<script src="pianfang-data.js"></script>
+<script>
+// 病种分类（基于 zhuzhi 关键词匹配）
+const DISEASE_BUCKETS = [
+  { key: '消化系统',  label: '消化系统',  kws: ['腹泻','便秘','胃','消化','肠道','肠','泻'] },
+  { key: '呼吸系统',  label: '呼吸系统',  kws: ['咳嗽','咳','感冒','鼻塞','发烧','退烧','清热','咽','肺'] },
+  { key: '皮肤/外科', label: '皮肤/外科', kws: ['脚气','灰指甲','麦粒肿','扁平疣','鼻血','腰痛','皮肤','瘙痒','蚊叮','痤疮','皲裂'] },
+  { key: '代谢/内分泌', label: '代谢/内分泌', kws: ['血糖','三高','减肥','体质','酸性','美容','淡斑','代谢','血压','血脂'] },
+  { key: '心脑/神经', label: '心脑/神经', kws: ['失眠','晕车','醒脑','焦虑','肾','补肾','升阳'] },
+  { key: '养生/特殊疗法', label: '养生/特殊疗法', kws: ['水疗','水','阴阳','寒湿','正阳','午时','道医','象数','符','祝由','生发','黑发'] },
+];
+
+let mode = 'cat';        // 'cat' | 'disease'
+let currentCat = '全部';
+let currentDisease = '全部';
+let searchText = '';
+
+function classifyDisease(zhuzhi) {
+  const found = [];
+  for (const b of DISEASE_BUCKETS) {
+    if (b.kws.some(k => zhuzhi.includes(k))) found.push(b.key);
+  }
+  return found;
+}
+
+function setMode(newMode) {
+  mode = newMode;
+  document.querySelectorAll('.idx-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.mode === newMode);
+  });
+  render();
+}
+
+function setFilter(value) {
+  if (mode === 'cat') currentCat = value;
+  else currentDisease = value;
+  render();
+}
+
+function doSearch() {
+  searchText = document.getElementById('searchInput').value.trim();
+  render();
+}
+
+function renderTags() {
+  // 在 idx-tabs 下方动态插入分类/病种标签
+  let tagsBar = document.getElementById('filterTags');
+  if (!tagsBar) {
+    tagsBar = document.createElement('div');
+    tagsBar.id = 'filterTags';
+    tagsBar.className = 'filter-tags';
+    const tabs = document.querySelector('.idx-tabs');
+    tabs.parentNode.insertBefore(tagsBar, tabs.nextSibling);
+  }
+  if (mode === 'cat') {
+    const cats = ['全部','内服','外用','水疗','象数','功法','体质','祝由','附录'];
+    tagsBar.innerHTML = cats.map(c =>
+      `<button class="${c === currentCat ? 'active' : ''}" onclick="setFilter('${c}')">${c}</button>`
+    ).join('');
+  } else {
+    const items = ['全部', ...DISEASE_BUCKETS.map(b => b.key)];
+    tagsBar.innerHTML = items.map(c =>
+      `<button class="${c === currentDisease ? 'active' : ''}" onclick="setFilter('${c}')">${c}</button>`
+    ).join('');
+  }
+}
+
+function render() {
+  renderTags();
+  const list = document.getElementById('resultList');
+  let items = DATA.slice();
+  // 搜索过滤
+  if (searchText) {
+    items = items.filter(it =>
+      it.name.includes(searchText) ||
+      it.zhuzhi.includes(searchText) ||
+      it.material.includes(searchText)
+    );
+  }
+  // 模式过滤
+  if (mode === 'cat') {
+    if (currentCat !== '全部') {
+      items = items.filter(it => it.cat === currentCat);
+    }
+    // 按分类分组渲染
+    const cats = ['内服','外用','水疗','象数','功法','体质','祝由','附录'];
+    const catNames = {
+      '内服': '一、内服类偏方', '外用': '二、外用/物理类偏方',
+      '水疗': '三、养生水疗类', '象数': '四、象数疗法偏方',
+      '功法': '五、功法/手法类', '体质': '六、体质调理类',
+      '祝由': '七、祝由相关', '附录': '附录：香蕉药用功效'
+    };
+    let html = '';
+    cats.forEach(cat => {
+      const inCat = items.filter(i => i.cat === cat);
+      if (inCat.length === 0) return;
+      html += `<div class="cat-block"><div class="cat-title">${catNames[cat]} <span class="cat-count">${inCat.length}</span></div><div class="items-grid">`;
+      inCat.forEach(item => {
+        html += `<a class="item-link" href="pianfang.html#pf-${DATA.indexOf(item)}">${item.name} <span class="item-zhuzhi">${item.zhuzhi.split(/[，,]/)[0]}</span><span class="r">›</span></a>`;
+      });
+      html += `</div></div>`;
+    });
+    if (!html) {
+      list.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><p>未找到匹配的偏方</p></div>`;
+    } else {
+      list.innerHTML = html;
+    }
+  } else {
+    // 病种模式
+    if (currentDisease !== '全部') {
+      items = items.filter(it => classifyDisease(it.zhuzhi).includes(currentDisease));
+    }
+    // 按病种分组（同一偏方只显示一次——归到第一个匹配的病种）
+    const assigned = new Set();
+    let html = '';
+    DISEASE_BUCKETS.forEach(b => {
+      const inB = items.filter(i => !assigned.has(i) && classifyDisease(i.zhuzhi).includes(b.key));
+      inB.forEach(i => assigned.add(i));
+      if (inB.length === 0) return;
+      html += `<div class="cat-block"><div class="cat-title">${b.label} <span class="cat-count">${inB.length}</span></div><div class="items-grid">`;
+      inB.forEach(item => {
+        html += `<a class="item-link" href="pianfang.html#pf-${DATA.indexOf(item)}">${item.name} <span class="item-zhuzhi">${item.zhuzhi.split(/[，,]/)[0]}</span><span class="r">›</span></a>`;
+      });
+      html += `</div></div>`;
+    });
+    // "其他"桶：没匹配上任何病种的
+    const orphan = items.filter(i => !assigned.has(i));
+    if (orphan.length > 0) {
+      html += `<div class="cat-block"><div class="cat-title">其他 <span class="cat-count">${orphan.length}</span></div><div class="items-grid">`;
+      orphan.forEach(item => {
+        html += `<a class="item-link" href="pianfang.html#pf-${DATA.indexOf(item)}">${item.name} <span class="item-zhuzhi">${item.zhuzhi.split(/[，,]/)[0]}</span><span class="r">›</span></a>`;
+      });
+      html += `</div></div>`;
+    }
+    if (!html) {
+      list.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><p>未找到匹配的偏方</p></div>`;
+    } else {
+      list.innerHTML = html;
+    }
+  }
+  document.getElementById('totalCount').textContent = `共 ${items.length} 个`;
+}
+
+// 兼容旧 switchIdx 调用（从 HTML 里 onclick 调用）
+function switchIdx(type) { setMode(type); }
+
+function setFontSize(size) {
+  document.documentElement.setAttribute('data-size', size);
+  localStorage.setItem('pf-font-size', size);
+  document.querySelectorAll('[data-size-btn]').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-size-btn="' + size + '"]').classList.add('active');
+}
+
+// 初始渲染
+render();
+(function() {
+  const saved = localStorage.getItem('pf-font-size') || 'medium';
+  setFontSize(saved);
+})();
+</script>
+</body>
+</html>

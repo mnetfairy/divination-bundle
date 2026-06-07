@@ -1,0 +1,15 @@
+# Cloudflare Tunnel 配置文件（示例）
+# 实际部署时，运行 install.sh 后会自动生成正确的 ~/.cloudflared/config.yml
+# 此处仅为模板参考，**不会**被 install.sh 实际使用
+tunnel: YOUR_TUNNEL_NAME
+credentials-file: /path/to/YOUR_TUNNEL_ID.json
+
+protocol: quic
+
+ingress:
+  - hostname: your-subdomain.your-domain.com
+    service: http://127.0.0.1:8080
+  - service: http_status:404
+
+loglevel: info
+transport-loglevel: debug
